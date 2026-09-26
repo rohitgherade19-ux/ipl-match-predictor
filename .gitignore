@@ -1,0 +1,18 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Local SQLite database (it gets generated locally when running db_setup.py)
+database/ipl.db
+
+# IDE / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

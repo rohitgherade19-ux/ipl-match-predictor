@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}Home - IPL Match Predictor{% endblock %}
+
+{% block content %}
+<section class="hero-section text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Predict the Winner Before the Match Starts</h1>
+        <p class="lead">Select the teams, venue, and toss details to get AI-powered match predictions.</p>
+    </div>
+</section>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card prediction-card">
+                <div class="card-body">
+                    <h3 class="card-title text-center mb-4">Make a Prediction</h3>
+                    <form action="/predict" method="POST" id="predictionForm">
+                        <div class="mb-3">
+                            <label for="team1" class="form-label fw-semibold">Team 1</label>
+                            <select class="form-select" id="team1" name="team1" required>
+                                <option value="" selected disabled>Select Team 1</option>
+                                {% for team in teams %}
+                                <option value="{{ team }}">{{ team }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="team2" class="form-label fw-semibold">Team 2</label>
+                            <select class="form-select" id="team2" name="team2" required>
+                                <option value="" selected disabled>Select Team 2</option>
+                                {% for team in teams %}
+                                <option value="{{ team }}">{{ team }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div id="teamAlert" class="alert alert-danger d-none" role="alert">
+                            Team 1 and Team 2 cannot be the same!
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="venue" class="form-label fw-semibold">Venue</label>
+                            <select class="form-select" id="venue" name="venue" required>
+                                <option value="" selected disabled>Select Venue</option>
+                                {% for venue in venues %}
+                                <option value="{{ venue }}">{{ venue }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="toss_winner" class="form-label fw-semibold">Toss Winner</label>
+                            <select class="form-select" id="toss_winner" name="toss_winner" required disabled>
+                                <option value="" selected disabled>Select Toss Winner</option>
+                            </select>
+                            <small class="text-muted">Please select teams first.</small>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold d-block">Toss Decision</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="toss_decision" id="decisionBat" value="bat" required>
+                                <label class="form-check-label" for="decisionBat">Bat</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="toss_decision" id="decisionField" value="field" required>
+                                <label class="form-check-label" for="decisionField">Field</label>
+                            </div>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+                                <i class="bi bi-cricket me-2"></i>Predict Winner
+                                <span class="spinner-border spinner-border-sm ms-2 d-none" id="submitSpinner" role="status" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

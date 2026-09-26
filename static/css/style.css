@@ -1,0 +1,97 @@
+/* IPL Match Predictor Custom Styles */
+:root {
+    --ipl-primary: #1a237e; /* Deep blue */
+    --ipl-secondary: #ff6f00; /* Orange/Amber */
+    --ipl-accent: #ffd600; /* Gold */
+    --ipl-dark: #0d1b2a;
+    --ipl-light: #f8f9fa;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+}
+
+/* Navbar */
+.ipl-navbar {
+    background-color: var(--ipl-primary);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.text-accent {
+    color: var(--ipl-accent) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--ipl-primary) 0%, var(--ipl-dark) 100%);
+    color: white;
+    padding: 80px 20px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Cards */
+.prediction-card {
+    background: white;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    padding: 2rem 1rem;
+}
+.stat-card {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* Results */
+.result-winner {
+    font-size: 3rem;
+    color: var(--ipl-accent);
+    font-weight: 800;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Progress Bars */
+.progress-bar-team1 {
+    background-color: var(--ipl-primary);
+}
+.progress-bar-team2 {
+    background-color: var(--ipl-secondary);
+}
+
+/* Footer */
+.ipl-footer {
+    background-color: var(--ipl-dark);
+    color: var(--ipl-light);
+    margin-top: auto;
+}
+
+/* Utilities */
+.text-primary {
+    color: var(--ipl-primary) !important;
+}
+.btn-primary {
+    background-color: var(--ipl-secondary);
+    border-color: var(--ipl-secondary);
+}
+.btn-primary:hover {
+    background-color: #e65100;
+    border-color: #e65100;
+}
+.btn-outline-primary {
+    color: var(--ipl-primary);
+    border-color: var(--ipl-primary);
+}
+.btn-outline-primary:hover {
+    background-color: var(--ipl-primary);
+    color: white;
+}
