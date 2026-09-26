@@ -82,5 +82,3 @@ The ML model predicts match outcomes based on multiple features. It uses a `Rand
 - Expanded player-level metrics in predicting outcomes.
 - Advanced hyperparameter tuning and model ensemble to increase accuracy.
 
-## License
-MIT
